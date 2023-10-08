@@ -1,25 +1,23 @@
-# Randomly generate a series of 25 numbers.
+# Write a script to generate an aleatoric code with a letter and a number (like a BINGO code)
 
 import random
 
-# Initialize an empty set to keep track of generated numbers
-generated_numbers = set()
+# Define the available letters and numbers
+letters = ['B', 'I', 'N', 'G', 'O']
+min_number = 1
+max_number = 99
 
-# Initialize an empty list for the random numbers
-random_numbers = []
+# Generate a random letter
+random_letter = random.choice(letters)
 
-# Generate 25 unique random numbers between 1 and 99
-while len(generated_numbers) < 25:
-    num = random.randint(1, 99)
-    if num not in generated_numbers:
-        generated_numbers.add(num)
-        random_numbers.append(f"{num:02d}")
+# Generate a random number between 1 and 99
+random_number = random.randint(min_number, max_number)
 
-# Display the letters BINGO above each column
-print("B   I   N   G   O")
+# Ensure the random number is two digits by adding a leading zero if necessary
+random_number_str = str(random_number).zfill(2)
 
-# Display the generated numbers in 5 rows of 5 numbers each
-for i in range(5):
-    row = random_numbers[i * 5: (i + 1) * 5]
-    row_str = "  ".join(row)
-    print(row_str)
+# Create the random code by combining the letter and number
+random_code = f"{random_letter}{random_number_str}"
+
+# Display the random code
+print("Random Code:", random_code)
