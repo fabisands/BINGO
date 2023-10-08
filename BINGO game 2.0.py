@@ -6,7 +6,7 @@ from tkinter import Canvas, Scrollbar
 code_number = 0
 
 # Function to generate random Bingo numbers
-def generate_bingo_numbers():
+def generate_bingo_board():
     # Initialize an empty set to keep track of generated numbers
     generated_numbers = set()
 
@@ -65,15 +65,15 @@ window.title("Random Code Generator")
 button_frame = tk.Frame(window)
 button_frame.pack()
 
-# Create a button to generate Bingo numbers without "Generate" in the label
-bingo_button = tk.Button(button_frame, text="BINGO Numbers", command=generate_bingo_numbers, font=("Helvetica", 16))
+# Create a button to generate Bingo board without "Generate" in the label
+bingo_button = tk.Button(button_frame, text="BINGO Board", command=generate_bingo_board, font=("Helvetica", 16))
 bingo_button.pack(side=tk.LEFT)
 
 # Create a button to generate random codes without "Generate" in the label
 code_button = tk.Button(button_frame, text="Random Code", command=generate_random_code, font=("Helvetica", 16))
 code_button.pack(side=tk.LEFT)
 
-# Create a label to display BINGO numbers
+# Create a label to display BINGO board
 bingo_label = tk.Label(window, text="", padx=20, pady=10, font=("Helvetica", 24))
 bingo_label.pack()
 
